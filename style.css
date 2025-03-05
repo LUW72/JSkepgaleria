@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+
+article
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+header, .bal, .jobb, article{
+    
+    margin: 5px;
+    padding: 5px;
+}
+
+.bal, .jobb {
+    border: 1px solid grey;
+    flex: 0 0 5%;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+.kiskepek .kep{
+    flex: 0 0 30%;
+}
+
