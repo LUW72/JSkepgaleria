@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+}
 
 article
 {
@@ -11,20 +23,75 @@ article
     gap: 10px;
 }
 
-header, .bal, .jobb, article{
-    
-    margin: 5px;
-    padding: 5px;
+
+.felso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .bal, .jobb {
-    border: 1px solid grey;
-    flex: 0 0 5%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+
+    background-color: rgb(113, 182, 242);
 }
 
+.bal:hover, .jobb:hover {
+    background-color: rgb(194, 186, 186);
+}
 
-img {
-    max-width: 100%;
+.bal::before {
+    content: "◀";
+    color: white;
+}
+
+.jobb::before {
+    content: "▶";
+    color: white;
+}
+
+.nagykep {
+    width: 400px;  /* Fix width */
+    height: 300px; /* Fix height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd;
+    overflow: hidden; /* Prevents jumping sizes */
+}
+
+.nagykep img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kiskepek {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.kiskepek img {
+    width: 300px;
+    height: 75px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.kiskepek img:hover {
+    transform: scale(1.1);
+    border: 2px solid blue;
 }
 
 
@@ -32,3 +99,19 @@ img {
     flex: 0 0 30%;
 }
 
+
+@media only screen and (max-width: 600px) {
+    .felso {
+        flex-direction: column;
+    }
+
+    .nagykep {
+        width: 100%;
+        height: auto;
+    }
+
+    .bal, .jobb {
+        width: 40px;
+        height: 40px;
+    }
+}

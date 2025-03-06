@@ -4,21 +4,21 @@
 export function kepMegjelenit(lista, tartalomElem) 
 {
     tartalomElem.innerHTML += ` <div class="kep">
-                                    <img src="${lista.kep}" alt="${lista.nev}">
+                                    <img src="${lista.kep}" alt="${lista.cim}">
                                 </div>`;
 }
 
 
 
-export function nagykepMegjelenit(keplista, tartalomElem)
+export function nagykepMegjelenit(keplista, index,tartalomElem)
 {
-    kepMegjelenit(keplista[0], tartalomElem);
+    kepMegjelenit(keplista[index], tartalomElem);
     
 }
 
-export function kiskepMegjelenit(keplista, tartalomElem)
+export function kiskepMegjelenit(keplista, indexKezdet, tartalomElem)
 {
-    for (let index = 1; index < keplista.length; index++) 
+    for (let index = indexKezdet; index < keplista.length; index++) 
     {
         kepMegjelenit(keplista[index], tartalomElem);
     }
